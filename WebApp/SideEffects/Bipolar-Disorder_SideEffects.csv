@@ -1,0 +1,93 @@
+
+70    Chills or fever
+
+70    Decreased appetite
+
+79    Constipatio
+
+92    Constipatio
+
+Name: Less common, dtype: object
+
+Name: More common, dtype: object
+...
+Name: Less common, dtype: object
+...
+Name: More common, dtype: object
+63    Acne
+63    NaN
+Name: Incidence not known, dtype: object
+63    NaN
+Name: More common, dtype: object
+64    Absent, missed, or irregular menstrual periods...
+Name: Less common, dtype: object
+64    Acid or sour stomach
+64    NaN
+Name: Incidence not known, dtype: object
+65    Accidental injury
+65    Actions that are out of control
+65    Dizzines
+66    Dizziness
+66    Indigestio
+66    NaN
+Name: Incidence not known, dtype: object
+67    Abnormal vision
+67    Constipatio
+67    NaN
+79    NaN
+92    NaN
+Name: Incidence not known, dtype: object
+68    Acid or sour stomach
+68    Blemishes on the skin
+68    NaN
+89    NaN
+Name: Incidence not known, dtype: object
+69    Chills or fever
+69    Cracks in the skin
+69    Decreased appetite
+94    Absent, missed, or irregular menstrual periods...
+Name: Less common, dtype: object
+94    Acid or sour stomach
+94    NaN
+Name: Incidence not known, dtype: object
+aching joints or muscles
+acid or sour stomach
+b...
+Name: Incidence not known, dtype: object
+back pai
+behavioral ch...
+Name: Less common, dtype: object
+belchin
+belchin...
+79    Abnormal vision
+belchin...
+92    Abnormal vision
+belchin...
+Name: Less common, dtype: object
+belching
+bloated feeling or pressure in the stoma...
+Name: Less common, dtype: object
+body aches or ...
+Name: More common, dtype: object
+body aches or p...
+Name: More common, dtype: object
+body aches or pain
+chang...
+89    Acid or sour stomach
+chang...
+Name: More common, dtype: object
+chi...
+89    Blemishes on the skin
+chi...
+Name: Less common, dtype: object
+drowsiness
+drowsiness (mild)
+headach
+joint or muscle pain
+lightheadedness
+loss of heat from the body...
+70    Cracks in the skin
+loss of heat from the body...
+Name: Incidence not known, dtype: object
+loss of strength
+menstrual pain

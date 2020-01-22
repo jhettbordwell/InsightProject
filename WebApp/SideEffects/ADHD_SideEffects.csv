@@ -1,0 +1,84 @@
+
+Name: Less common, dtype: object
+
+Name: More common, dtype: object
+...
+76    Constipatio
+...
+Name: More common, dtype: object
+10    Abdominal or stomach cramps
+10    NaN
+Name: Less common, dtype: object
+10    NaN
+Name: More common, dtype: object
+11    Bigger, dilated, or enlarged pupils (black par...
+Name: Incidence not known, dtype: object
+11    NaN
+Name: Less common, dtype: object
+11    NaN
+Name: More common, dtype: object
+4    Belchin
+4    Decreased interest in sexual intercourse
+4    Dry mouth
+54    Acid or sour stomach
+54    NaN
+Name: Incidence not known, dtype: object
+54    Twitching
+55    Bad, unusual, or unpleasant (after) taste
+55    NaN
+Name: Less common, dtype: object
+55    NaN
+Name: More common, dtype: object
+56    Belchin
+56    Decreased interest in sexual intercourse
+56    Dry mouth
+57    Belchin
+57    Change in taste
+57    Constipatio
+58    Constipatio
+58    Darkening of the skin
+58    NaN
+Name: Incidence not known, dtype: object
+62    Blurred vision
+62    Constipatio
+62    NaN
+76    NaN
+Name: Incidence not known, dtype: object
+9    Bigger, dilated, or enlarged pupils (black par...
+Name: Incidence not known, dtype: object
+9    NaN
+Name: Less common, dtype: object
+9    NaN
+Name: More common, dtype: object
+belchin
+bigger, dilated, ...
+Name: Incidence not known, dtype: object
+cha...
+Name: Incidence not known, dtype: object
+change in sense of taste
+decrease in appetite
+decreased appetite
+decreased interest in sexual ...
+Name: Incidence not known, dtype: object
+decreased sexual ...
+Name: Less common, dtype: object
+decreased sexual abilit...
+Name: Less common, dtype: object
+diff...
+Name: Incidence not known, dtype: object
+dizziness
+drow...
+76    Blurred vision
+drow...
+Name: Less common, dtype: object
+dryness of the mouth
+heartbur
+indig...
+Name: More common, dtype: object
+indigestio
+loss of appetite
+sore throa
+stom...
+Name: Less common, dtype: object
+stoma...
+Name: More common, dtype: object

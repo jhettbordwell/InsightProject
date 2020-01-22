@@ -1,0 +1,4 @@
+This directory should contain subdirectories with a title of each relevant condition.
+
+In each subdirectory should be files containing the information from the different sentiment
+analysis techniques for each medication.

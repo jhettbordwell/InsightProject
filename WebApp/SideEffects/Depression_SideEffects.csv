@@ -1,0 +1,149 @@
+
+70    Chills or fever
+
+70    Decreased appetite
+
+79    Constipatio
+
+92    Constipatio
+
+Name: Incidence not known, dtype: object
+
+Name: Less common, dtype: object
+
+Name: More common, dtype: object
+...
+76    Constipatio
+...
+Name: Less common, dtype: object
+...
+Name: More common, dtype: object
+35    Acid or sour stomach
+35    Dry ski
+35    NaN
+Name: Incidence not known, dtype: object
+62    Blurred vision
+62    Constipatio
+62    NaN
+76    NaN
+Name: Incidence not known, dtype: object
+67    Abnormal vision
+67    Constipatio
+67    NaN
+79    NaN
+92    NaN
+Name: Incidence not known, dtype: object
+69    Chills or fever
+69    Cracks in the skin
+69    Decreased appetite
+71    Acid or sour stomach
+71    Flushed, dry skin
+71    anxiet
+72    Body aches or pain
+72    Bruising
+72    Decrease in sexual desire or ability
+73    Bloated or full feeling
+73    Constipatio
+73    NaN
+Name: Incidence not known, dtype: object
+74    Abnormal dreams
+74    Change in taste
+74    Night sweat
+75    Abnormal orgasm
+75    Body aches or pain
+75    NaN
+Name: Incidence not known, dtype: object
+77    Abdominal or stomach pain
+77    Constipatio
+77    NaN
+Name: Incidence not known, dtype: object
+78    Accidental injury
+78    Anxiet
+78    NaN
+84    NaN
+Name: Incidence not known, dtype: object
+80    Blindness
+80    Constipatio
+80    NaN
+Name: Incidence not known, dtype: object
+81    Blurred vision
+81    NaN
+Name: Less common, dtype: object
+81    NaN
+Name: More common, dtype: object
+abnormal dreams
+acid or sour stomach
+ba...
+Name: Less common, dtype: object
+back pai
+belchin
+belchin...
+79    Abnormal vision
+belchin...
+92    Abnormal vision
+belchin...
+Name: Less common, dtype: object
+bladder pain
+bloat...
+Name: Less common, dtype: object
+bloatin
+blurred vision
+body aches or pain...
+84    Accidental injury
+body aches or pain...
+Name: Less common, dtype: object
+change in sense of taste
+changes in visi...
+Name: Less common, dtype: object
+chills
+constipatio
+continuing ringin...
+Name: Incidence not known, dtype: object
+coug...
+Name: Less common, dtype: object
+cough
+decrease in appetite
+decrease...
+Name: More common, dtype: object
+decreased interest in sexual inte...
+Name: More common, dtype: object
+decreased vision
+dia...
+Name: More common, dtype: object
+difficulty ha...
+84    Anxiet
+difficulty ha...
+Name: More common, dtype: object
+difficulty having a...
+Name: More common, dtype: object
+dizzines
+dizziness
+drow...
+76    Blurred vision
+drow...
+Name: Less common, dtype: object
+drowsiness
+dry mouth
+e...
+Name: Less common, dtype: object
+fruit-like breath odor
+headach
+hives
+inability to sit still
+inc...
+Name: Incidence not known, dtype: object
+itching, scaling, severe redne...
+Name: More common, dtype: object
+joint or muscle pain
+large, flat,...
+Name: Incidence not known, dtype: object
+loss of heat from the body...
+70    Cracks in the skin
+loss of heat from the body...
+Name: Incidence not known, dtype: object
+muscle tension
+numbnes
+sleepine...
+Name: More common, dtype: object
+weight los
+yawning
