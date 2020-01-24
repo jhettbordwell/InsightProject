@@ -30,42 +30,43 @@ class ADHDForm(FlaskForm):
     SEresponseList = [(SE,SE) for SE in SEresponseList if SE.strip()]
     
     concern1_question = u"What is the 1st side effect concern you have about your medication?"
-    concern1 = SelectField(concern1_question, choices=SEresponseList, validators=[DataRequired()])
+    concern1 = SelectField(concern1_question, choices=SEresponseList)
         
     concern1_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern1_rating = SelectField(concern1_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)], validators=[DataRequired()])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern2_question = u"What is the 2nd side effect concern you have about your medication?"
     concern2 = SelectField(concern2_question, choices=SEresponseList)
         
     concern2_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern2_rating = SelectField(concern2_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern3_question = u"What is the 3rd side effect concern you have about your medication?"
     concern3 = SelectField(concern3_question, choices=SEresponseList)
         
     concern3_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern3_rating = SelectField(concern3_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     # Lifestyle concerns
     lifestyle_question = u"(STRETCH GOAL) I am worried about interactions with: "
-    lifestyle_choices = [(1, 'Alcohol'), (2, 'Marijuana'), (3, 'Both')]
+    lifestyle_choices = [('1', 'Alcohol'), ('3', 'Marijuana'), ('3', 'Both')]
     lifestyle = SelectField(lifestyle_question, choices=lifestyle_choices)
 
     # Addiction concerns
     addiction_question = u"(STRETCH GOAL) Are you worried about addiction to your medication? "
-    addiction_choices = [(1, 'Yes'), (0, 'No')]
+    addiction_choices = [('1', 'Yes'), ('0', 'No')]
     addiction = SelectField(addiction_question, choices=addiction_choices)
 
     # Comparison of side effects to effectiveness
     eff_question = u"On a scale of 1 to 10, how tolerable would these side effects be if the medication were effective at treating your condition?"
     eff_rating = SelectField(eff_question,
-                             choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                             choices=[(str(i),str(i)) for i in range(1,11)],
                              validators=[DataRequired()])
-    submit = SubmitField("Let's do the research")
+
+    submitAgain = SubmitField("Let's do the research")
 
 class AnxietyForm(FlaskForm):
 
@@ -74,42 +75,42 @@ class AnxietyForm(FlaskForm):
     SEresponseList = [(SE,SE) for SE in SEresponseList if SE.strip()]
     
     concern1_question = u"What is the 1st side effect concern you have about your medication?"
-    concern1 = SelectField(concern1_question, choices=SEresponseList, validators=[DataRequired()])
+    concern1 = SelectField(concern1_question, choices=SEresponseList)
         
     concern1_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern1_rating = SelectField(concern1_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)], validators=[DataRequired()])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern2_question = u"What is the 2nd side effect concern you have about your medication?"
     concern2 = SelectField(concern2_question, choices=SEresponseList)
         
     concern2_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern2_rating = SelectField(concern2_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern3_question = u"What is the 3rd side effect concern you have about your medication?"
     concern3 = SelectField(concern3_question, choices=SEresponseList)
         
     concern3_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern3_rating = SelectField(concern3_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     # Lifestyle concerns
     lifestyle_question = u"(STRETCH GOAL) I am worried about interactions with: "
-    lifestyle_choices = [(1, 'Alcohol'), (2, 'Marijuana'), (3, 'Both')]
+    lifestyle_choices = [('1', 'Alcohol'), ('3', 'Marijuana'), ('3', 'Both')]
     lifestyle = SelectField(lifestyle_question, choices=lifestyle_choices)
 
     # Addiction concerns
     addiction_question = u"(STRETCH GOAL) Are you worried about addiction to your medication? "
-    addiction_choices = [(1, 'Yes'), (0, 'No')]
+    addiction_choices = [('1', 'Yes'), ('0', 'No')]
     addiction = SelectField(addiction_question, choices=addiction_choices)
 
     # Comparison of side effects to effectiveness
     eff_question = u"On a scale of 1 to 10, how tolerable would these side effects be if the medication were effective at treating your condition?"
     eff_rating = SelectField(eff_question,
-                             choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                             choices=[(str(i),str(i)) for i in range(1,11)],
                              validators=[DataRequired()])
-    submit = SubmitField("Let's do the research")
+    submitAgain = SubmitField("Let's do the research")
     
 class BipolarForm(FlaskForm):
 
@@ -118,11 +119,11 @@ class BipolarForm(FlaskForm):
     SEresponseList = [(SE,SE) for SE in SEresponseList if SE.strip()]
     
     concern1_question = u"What is the 1st side effect concern you have about your medication?"
-    concern1 = SelectField(concern1_question, choices=SEresponseList, validators=[DataRequired()])
+    concern1 = SelectField(concern1_question, choices=SEresponseList)
         
     concern1_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern1_rating = SelectField(concern1_rating_question,
-                                  choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                                  choices=[(str(i),str(i)) for i in range(1,11)],
                                   validators=[DataRequired()])
 
     concern2_question = u"What is the 2nd side effect concern you have about your medication?"
@@ -130,31 +131,31 @@ class BipolarForm(FlaskForm):
         
     concern2_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern2_rating = SelectField(concern2_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern3_question = u"What is the 3rd side effect concern you have about your medication?"
     concern3 = SelectField(concern3_question, choices=SEresponseList)
         
     concern3_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern3_rating = SelectField(concern3_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     # # Lifestyle concerns
     lifestyle_question = u"(STRETCH GOAL) I am worried about interactions with: "
-    lifestyle_choices = [(1, 'Alcohol'), (2, 'Marijuana'), (3, 'Both')]
+    lifestyle_choices = [('1', 'Alcohol'), ('3', 'Marijuana'), ('3', 'Both')]
     lifestyle = SelectField(lifestyle_question, choices=lifestyle_choices)
 
     # Addiction concerns
     addiction_question = u"(STRETCH GOAL) Are you worried about addiction to your medication? "
-    addiction_choices = [(1, 'Yes'), (0, 'No')]
+    addiction_choices = [('1', 'Yes'), ('0', 'No')]
     addiction = SelectField(addiction_question, choices=addiction_choices)
 
     # Comparison of side effects to effectiveness
     eff_question = u"On a scale of 1 to 10, how tolerable would these side effects be if the medication were effective at treating your condition? "
     eff_rating = SelectField(eff_question,
-                             choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                             choices=[(str(i),str(i)) for i in range(1,11)],
                              validators=[DataRequired()])
-    submit = SubmitField("Let's do the research")
+    submitAgain = SubmitField("Let's do the research")
 
 class DepressionForm(FlaskForm):
 
@@ -163,42 +164,42 @@ class DepressionForm(FlaskForm):
     SEresponseList = [(SE,SE) for SE in SEresponseList if SE.strip()]
     
     concern1_question = u"What is the 1st side effect concern you have about your medication?"
-    concern1 = SelectField(concern1_question, choices=SEresponseList, validators=[DataRequired()])
+    concern1 = SelectField(concern1_question, choices=SEresponseList)
         
     concern1_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern1_rating = SelectField(concern1_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)], validators=[DataRequired()])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern2_question = u"What is the 2nd side effect concern you have about your medication?"
     concern2 = SelectField(concern2_question, choices=SEresponseList)
         
     concern2_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern2_rating = SelectField(concern2_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern3_question = u"What is the 3rd side effect concern you have about your medication?"
     concern3 = SelectField(concern3_question, choices=SEresponseList)
         
     concern3_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern3_rating = SelectField(concern3_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     # Lifestyle concerns
     lifestyle_question = u"(STRETCH GOAL) I am worried about interactions with: "
-    lifestyle_choices = [(1, 'Alcohol'), (2, 'Marijuana'), (3, 'Both')]
+    lifestyle_choices = [('1', 'Alcohol'), ('3', 'Marijuana'), ('3', 'Both')]
     lifestyle = SelectField(lifestyle_question, choices=lifestyle_choices)
 
     # Addiction concerns
     addiction_question = u"(STRETCH GOAL) Are you worried about addiction to your medication? "
-    addiction_choices = [(1, 'Yes'), (0, 'No')]
+    addiction_choices = [('1', 'Yes'), ('0', 'No')]
     addiction = SelectField(addiction_question, choices=addiction_choices)
 
     # Comparison of side effects to effectiveness
     eff_question = u"On a scale of 1 to 10, how tolerable would these side effects be if the medication were effective at treating your condition?"
     eff_rating = SelectField(eff_question,
-                             choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                             choices=[(str(i),str(i)) for i in range(1,11)],
                              validators=[DataRequired()])
-    submit = SubmitField("Let's do the research")
+    submitAgain = SubmitField("Let's do the research")
 
 class SchizophreniaForm(FlaskForm):
 
@@ -207,42 +208,42 @@ class SchizophreniaForm(FlaskForm):
     SEresponseList = [(SE,SE) for SE in SEresponseList if SE.strip()]
     
     concern1_question = u"What is the 1st side effect concern you have about your medication?"
-    concern1 = SelectField(concern1_question, choices=SEresponseList, validators=[DataRequired()])
+    concern1 = SelectField(concern1_question, choices=SEresponseList)
         
     concern1_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern1_rating = SelectField(concern1_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)], validators=[DataRequired()])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern2_question = u"What is the 2nd side effect concern you have about your medication?"
     concern2 = SelectField(concern2_question, choices=SEresponseList)
         
     concern2_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern2_rating = SelectField(concern2_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     concern3_question = u"What is the 3rd side effect concern you have about your medication?"
     concern3 = SelectField(concern3_question, choices=SEresponseList)
         
     concern3_rating_question = u"How much of a concern is this for you on a scale of 1 to 10?"
     concern3_rating = SelectField(concern3_rating_question,
-                                     choices=[(0.1*(i-1),str(i)) for i in range(1,11)])
+                                     choices=[(str(i),str(i)) for i in range(1,11)])
 
     # Lifestyle concerns
     lifestyle_question = u"(STRETCH GOAL) I am worried about interactions with: "
-    lifestyle_choices = [(1, 'Alcohol'), (2, 'Marijuana'), (3, 'Both')]
+    lifestyle_choices = [('1', 'Alcohol'), ('3', 'Marijuana'), ('3', 'Both')]
     lifestyle = SelectField(lifestyle_question, choices=lifestyle_choices)
 
     # Addiction concerns
     addiction_question = u"(STRETCH GOAL) Are you worried about addiction to your medication? "
-    addiction_choices = [(1, 'Yes'), (0, 'No')]
+    addiction_choices = [('1', 'Yes'), ('0', 'No')]
     addiction = SelectField(addiction_question, choices=addiction_choices)
 
     # Comparison of side effects to effectiveness
     eff_question = u"On a scale of 1 to 10, how tolerable would these side effects be if the medication were effective at treating your condition?"
     eff_rating = SelectField(eff_question,
-                             choices=[(0.1*(i-1),str(i)) for i in range(1,11)],
+                             choices=[(str(i),str(i)) for i in range(1,11)],
                              validators=[DataRequired()])
-    submit = SubmitField("Let's do the research")
+    submitAgain = SubmitField("Let's do the research")
     
 class LetsGo(FlaskForm):
     submit = SubmitField("Let's get started!")

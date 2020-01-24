@@ -11,9 +11,12 @@ from config.config import Config
 # Importing my own module
 from pythonForms.form import LetsGo, DiagnosisForm, ADHDForm, AnxietyForm, BipolarForm, DepressionForm, SchizophreniaForm
 
+from classifier.classify import rank_medications
+
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import h5py
 # Importing machine learning section
 # from import findCompatibility
 
@@ -37,7 +40,10 @@ def diagnosisform():
     form = DiagnosisForm()
     if form.validate_on_submit():
         content = form.diagnosis.data
-        return furtherquestions(content)
+        with h5py.File('DIAGNOSIS.h5', 'w') as F:
+            F['content'] = content
+        
+        return redirect(url_for('furtherquestions'))
     return render_template("diagnosisform.html", form=form)
 
 def create_image():
@@ -46,7 +52,10 @@ def create_image():
     plt.savefig('static/test/test.png')
 
 @app.route("/furtherquestions/", methods=['GET', 'POST'])
-def furtherquestions(content, title=""):
+def furtherquestions():
+
+    content = h5py.File('DIAGNOSIS.h5','r')['content'][()]
+    
     if content.strip() == 'ADHD':
         form = ADHDForm()
     elif content.strip() == 'Anxiety':
@@ -59,29 +68,47 @@ def furtherquestions(content, title=""):
         form = SchizophreniaForm()
 
     if form.validate_on_submit():
-        if ((form.concern1.data == form.concern2.data) or
-            (form.concern1.data == form.concern3.data) or
-            (form.concern2.data == form.concern3.data)):
-            error_msg = "Side effect fields must not be duplicates"
-            return furtherquestions(content, title=error_msg)
+        # if ((form.concern1.data == form.concern2.data) or
+        #     (form.concern1.data == form.concern3.data) or
+        #     (form.concern2.data == form.concern3.data)):
+        #     error_msg = "Side effect fields must not be duplicates"
+        #     return redirect(url_for('further_questions'))
+
+        make_weight = lambda x: (int(x)-1)/10.
         
         answers = {}
         answers['Diagnosis'] = content
         answers['SE1'] = form.concern1.data
-        answers['SE1_rate'] = form.concern1_rating.data
+        answers['SE1_rate'] = make_weight(form.concern1_rating.data)
         answers['SE2'] = form.concern2.data
-        answers['SE2_rate'] = form.concern2_rating.data
+        answers['SE2_rate'] = make_weight(form.concern2_rating.data)
         answers['SE3'] = form.concern3.data
-        answers['SE3_rate'] = form.concern3_rating.data
-        answers['alcohol'] = (form.lifestyle.data == 1 or form.lifestyle.data == 3)
-        answers['marijuana'] = (form.lifestyle.data == 2 or form.lifestyle.data == 3)
-        answers['addiction'] = bool(form.addiction.data)
-        answers['eff_rating'] = form.eff_rating.data
+        answers['SE3_rate'] = make_weight(form.concern3_rating.data)
+        answers['alcohol'] = (form.lifestyle.data == '1' or form.lifestyle.data == '3')
+        answers['marijuana'] = (form.lifestyle.data == '2' or form.lifestyle.data == '3')
+        answers['addiction'] = bool(int(form.addiction.data))
+        answers['eff_rating'] = (int(form.eff_rating.data)-1)/10.
 
-        flash("I have all the answers!")
-        return answers
+        with h5py.File('temporarysolution.h5','w') as F:
+            for key in answers:
+                F[key] = answers[key]
+        
+        return redirect(url_for('results'))
 
-    return render_template("furtherquestions.html", title=title, form=form)
+    return render_template("furtherquestions.html", title="", form=form)
+
+@app.route("/results")
+def results():
+    answers = {}
+    with h5py.File('temporarysolution.h5','r') as F:
+        for key in F.keys():
+            answers[key] = F[key][()]
+
+    medList = rank_medications(answers)
+    medSearch = [med.split(' ')[0] for med in medList]
+    
+    return render_template("results.html", med1=medList[0], med2=medList[1], med3=medList[2],
+                           medsearch1=medSearch[0], medsearch2=medSearch[1], medSearch3=medSearch[3])
 
 @app.route("/about")
 def about():
