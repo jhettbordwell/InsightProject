@@ -26,6 +26,15 @@ p {
   margin: 0 0 16px;
 }
 
+/* https://stackoverflow.com/questions/2810262/how-to-stick-text-to-the-bottom-of-the-page/2810293 */
+#copyright {
+	float: left;
+	padding-bottom: 10px;
+	padding-top: 250px;
+	text-align: center;
+	bottom: 0px;
+	width: 100%;
+}
 
 
 /* From: https://www.w3schools.com/howto/howto_css_dropdown.asp */

@@ -9,45 +9,62 @@ from wtforms.fields.core import Label
 from config.config import Config
 
 # Importing my own module
-from pythonForms.form import LetsGo, DiagnosisForm, ADHDForm, AnxietyForm, BipolarForm, DepressionForm, SchizophreniaForm, SetupForm
+from pythonForms.form import LetsGo, DiagnosisForm, ADHDForm, AnxietyForm, BipolarForm, DepressionForm, SchizophreniaForm
+
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+# Importing machine learning section
+# from import findCompatibility
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
+rainbow_folder = os.path.join('static', 'test')
+app.config['UPLOAD_FOLDER'] = rainbow_folder
+
 @app.route("/", methods=['GET','POST'])
 def home():
     form = LetsGo()
-    if form.validate_on_submit():
-        return redirect(url_for('about'))
-    return render_template("home.html", form=form)
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'action.png')
 
-@app.route("/form", methods=['GET','POST'])
-def searchForm():
+    if form.validate_on_submit():
+        return redirect(url_for('diagnosisform'))
+    return render_template("home.html", form=form, user_image=full_filename)
+
+@app.route("/diagnosisform", methods=['GET','POST'])
+def diagnosisform():
     form = DiagnosisForm()
     if form.validate_on_submit():
         content = form.diagnosis.data
-        return redirect("furtherquestions.html", content=content)
-    return render_template("form.html", form=form)
+        return furtherquestions(content)
+    return render_template("diagnosisform.html", form=form)
 
-@app.route("/furtherquestions/<string:content>", methods=['GET', 'POST'])
-def conditionForm(content):
-    if content == 'ADHD':
-        SetupForm('ADHD')
+def create_image():
+    x = np.arange(10000).reshape((100,-1))
+    plt.imshow(x)
+    plt.savefig('static/test/test.png')
+
+@app.route("/furtherquestions/", methods=['GET', 'POST'])
+def furtherquestions(content, title=""):
+    if content.strip() == 'ADHD':
         form = ADHDForm()
-    elif content == 'Anxiety':
-        SetupForm('Anxiety')
+    elif content.strip() == 'Anxiety':
         form = AnxietyForm()
-    elif content == 'Bipolar-Disorder':
-        SetupForm('Bipolar-Disorder')
+    elif content.strip() == 'Bipolar-Disorder':
         form = BipolarForm()
-    elif content == 'Depression':
-        SetupForm('Depression')
+    elif content.strip() == 'Depression':
         form = DepressionForm()
-    elif content == 'Schizophrenia':
-        SetupForm('Schizophrenia')
+    elif content.strip() == 'Schizophrenia':
         form = SchizophreniaForm()
-        
+
     if form.validate_on_submit():
+        if ((form.concern1.data == form.concern2.data) or
+            (form.concern1.data == form.concern3.data) or
+            (form.concern2.data == form.concern3.data)):
+            error_msg = "Side effect fields must not be duplicates"
+            return furtherquestions(content, title=error_msg)
+        
         answers = {}
         answers['Diagnosis'] = content
         answers['SE1'] = form.concern1.data
@@ -63,7 +80,8 @@ def conditionForm(content):
 
         flash("I have all the answers!")
         return answers
-    return render_template("furtherquestions.html", form=form)
+
+    return render_template("furtherquestions.html", title=title, form=form)
 
 @app.route("/about")
 def about():

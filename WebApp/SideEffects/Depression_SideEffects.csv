@@ -1,149 +1,198 @@
 
-70    Chills or fever
-
-70    Decreased appetite
-
-79    Constipatio
-
-92    Constipatio
-
-Name: Incidence not known, dtype: object
-
-Name: Less common, dtype: object
-
-Name: More common, dtype: object
-...
-76    Constipatio
-...
-Name: Less common, dtype: object
-...
-Name: More common, dtype: object
-35    Acid or sour stomach
-35    Dry ski
-35    NaN
-Name: Incidence not known, dtype: object
-62    Blurred vision
-62    Constipatio
-62    NaN
-76    NaN
-Name: Incidence not known, dtype: object
-67    Abnormal vision
-67    Constipatio
-67    NaN
-79    NaN
-92    NaN
-Name: Incidence not known, dtype: object
-69    Chills or fever
-69    Cracks in the skin
-69    Decreased appetite
-71    Acid or sour stomach
-71    Flushed, dry skin
-71    anxiet
-72    Body aches or pain
-72    Bruising
-72    Decrease in sexual desire or ability
-73    Bloated or full feeling
-73    Constipatio
-73    NaN
-Name: Incidence not known, dtype: object
-74    Abnormal dreams
-74    Change in taste
-74    Night sweat
-75    Abnormal orgasm
-75    Body aches or pain
-75    NaN
-Name: Incidence not known, dtype: object
-77    Abdominal or stomach pain
-77    Constipatio
-77    NaN
-Name: Incidence not known, dtype: object
-78    Accidental injury
-78    Anxiet
-78    NaN
-84    NaN
-Name: Incidence not known, dtype: object
-80    Blindness
-80    Constipatio
-80    NaN
-Name: Incidence not known, dtype: object
-81    Blurred vision
-81    NaN
-Name: Less common, dtype: object
-81    NaN
-Name: More common, dtype: object
+Abdominal or stomach pain
+Abnormal dreams
+Abnormal orgasm
+Abnormal vision
+Accidental injury
+Acid or sour stomach
+Anxiet
+Blindness
+Bloated or full feeling
+Blurred vision
+Body aches or pain
+Bruising
+Change in taste
+Chills or fever
+Constipatio
+Cracks in the skin
+Decrease in sexual desire or ability
+Decreased appetite
+Dry ski
+Flushed, dry skin
+Night sweat
 abnormal dreams
 acid or sour stomach
-ba...
-Name: Less common, dtype: object
+anxiet
 back pai
 belchin
-belchin...
-79    Abnormal vision
-belchin...
-92    Abnormal vision
-belchin...
-Name: Less common, dtype: object
 bladder pain
-bloat...
-Name: Less common, dtype: object
+bloated or full feeling
 bloatin
 blurred vision
-body aches or pain...
-84    Accidental injury
-body aches or pain...
-Name: Less common, dtype: object
+body aches or pain
 change in sense of taste
-changes in visi...
-Name: Less common, dtype: object
+change in taste
+change or problem with discharge of semen
+changes in vision
 chills
+cloudy urine
+congestion
 constipatio
-continuing ringin...
-Name: Incidence not known, dtype: object
-coug...
-Name: Less common, dtype: object
+continuing ringing or buzzing or other unexplained noise in the ears
 cough
+coughing
 decrease in appetite
-decrease...
-Name: More common, dtype: object
-decreased interest in sexual inte...
-Name: More common, dtype: object
+decrease in sexual desire or ability
+decreased appetite
+decreased interest in sexual intercourse
+decreased strength and energy
 decreased vision
-dia...
-Name: More common, dtype: object
-difficulty ha...
-84    Anxiet
-difficulty ha...
-Name: More common, dtype: object
-difficulty having a...
-Name: More common, dtype: object
+diarrhe
+diarrhea
+diarrhea or loose stools
+difficult, burning, or painful urination
+difficulty having a bowel movement
+difficulty having a bowel movement (stool)
+difficulty with moving
 dizzines
 dizziness
-drow...
-76    Blurred vision
-drow...
-Name: Less common, dtype: object
+dizziness or fainting when getting up suddenly from a lying or sitting position
 drowsiness
 dry mouth
-e...
-Name: Less common, dtype: object
+dryness or soreness of the throat
+ear congestion
+ejaculation delay
+excess air or gas in the stomach or intestines
+eye pai
+fear
+feeling of warmth or redness of the face, neck, arms, and occasionally, upper chest
+fever
+flushing or redness of the skin, with feeling of warmth or heat
+frequent need to urinate
+frequent urge to urinate
+frequent urinatio
 fruit-like breath odor
+gas
+gas in the stomach
+general feeling of discomfort or illness
+hair los
 headach
+headache
+hearing los
+heartbur
 hives
+hives</a or <a data-ga-action="welts" data-ga-category="Content Link" href="/cg/angioedema.html"welts
+hoarseness
+hyperventilation
+inability to have or keep an erection
 inability to sit still
-inc...
-Name: Incidence not known, dtype: object
-itching, scaling, severe redne...
-Name: More common, dtype: object
+increased appetite
+increased hunger
+increased muscle tone
+increased need to urinate
+increased salivation
+increased sensitivity to touch
+increased sweating
+increased thirst
+increased urination
+increased weight
+increased yawning
+indigestio
+irritability
+itching, scaling, severe redness, soreness, or swelling of the skin
 joint or muscle pain
-large, flat,...
-Name: Incidence not known, dtype: object
-loss of heat from the body...
-70    Cracks in the skin
-loss of heat from the body...
-Name: Incidence not known, dtype: object
+joint pain
+lack or loss of strength
+large, flat, blue or purplish patches in the skin
+leg cramps
+lightheadedness
+longer than usual time to ejaculation of semen
+loose stools
+loss in sexual ability, desire, drive, or performance
+loss of appetite
+loss of heat from the body
+loss of taste
+loss of voice
+low blood pressur
+memory los
+muscle aches
+muscle aches and pains
+muscle aching or cramping
+muscle pain
+muscle pains or stiffness
+muscle spasm
 muscle tension
+nause
+nausea
+need to keep moving
+nervousness
+not able to have an orgasm
 numbnes
-sleepine...
-Name: More common, dtype: object
+pain in the muscles or joints
+pain in the neck or shoulders
+pain or tenderness around the eyes and cheekbones
+painful or prolonged erections of the penis
+passing gas
+passing of gas
+rapid weight gain
+rash
+redness of the skin
+redness or other discoloration of the skin
+redness, swelling, or soreness of the tongue
+runny nos
+scaly skin
+sense of constant movement of self or surroundings
+severe sunburn
+shakiness in the legs, arms, hands, or feet
+shaking
+shivering
+sleepiness or unusual drowsiness
+sleeplessnes
+sneezing
+sore throa
+stomach discomfort or upset
+stomach discomfort, upset, or pain
+stomach or abdominal cramps, gas, or pain
+stomach pain
+stomach pain or gas
+stomach pain, fullness, or discomfort
+stuffy nose
+sudden sweating
+sweating increased
+swelling of the breasts (in women)
+swelling of the breasts or breast soreness in both females and males
+swollen joints
+tearing
+tender, swollen glands in the neck
+tightness of the chest
+tingling of the hands or feet
+tingling, burning, or prickly feelings on the skin
+tingling, burning, or prickly sensations
+tooth grinding
+tooth problems
+trembling
+trembling or shaking
+trembling or shaking of the hands or feet
+tremor
+trouble breathing
+trouble sleeping
+unable to sleep
+uncontrolled eye movements
+unexplained weight los
+unusual dreams
+unusual drowsiness, dullness, tiredness, weakness or feeling of sluggishness
+unusual feeling of well-being
+unusual increase or decrease in weight
+unusual milk production
+unusual secretion of milk (in women)
+unusual weight gain or loss
+unusually deep sleep
+unusually long duration of sleep
+voice changes
+vomitin
+vomiting
+watering of the mouth
+weakness
+weight gain
 weight los
 yawning

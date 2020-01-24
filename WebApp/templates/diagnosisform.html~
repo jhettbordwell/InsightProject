@@ -26,44 +26,10 @@
     <form action="" method="post" novalidate>
       {{ form.csrf_token }}
       <p>
-	{{ form.concern1.label }}<br>
-	{{ form.concern1() }}
+	{{ form.diagnosis.label }}<br><br>
+	{{ form.diagnosis()}}<br><br><br>
+	{{ form.submitDiagnosis() }}
       </p>
-      <p>
-	{{ form.concern1_rating.label }}<br>
-	{{ form.concern1_rating() }}
-      </p>
-      <p>
-	{{ form.concern2.label }}<br>
-	{{ form.concern2() }}
-      </p>
-      <p>
-	{{ form.concern2_rating.label }}<br>
-	{{ form.concern2_rating() }}
-      </p>
-      <p>
-	{{ form.concern3.label }}<br>
-	{{ form.concern3() }}
-      </p>
-      <p>
-	{{ form.concern3_rating.label }}<br>
-	{{ form.concern3_rating() }}
-      </p>
-      <p>
-	{{ form.lifestyle.label }}<br>
-	{{ form.lifestyle() }}
-      </p>
-      <p>
-	{{ form.addiction.label }}<br>
-	{{ form.addiction() }}
-      </p>
-      <p>
-	{{ form.eff_rating.label }}<br>
-	{{ form.eff_rating() }}
-      </p>
-      <p>
-	{{ form.submit() }}
-	</p>
     </form>
   </body>
 </html>

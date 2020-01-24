@@ -1,93 +1,180 @@
 
-70    Chills or fever
-
-70    Decreased appetite
-
-79    Constipatio
-
-92    Constipatio
-
-Name: Less common, dtype: object
-
-Name: More common, dtype: object
-...
-Name: Less common, dtype: object
-...
-Name: More common, dtype: object
-63    Acne
-63    NaN
-Name: Incidence not known, dtype: object
-63    NaN
-Name: More common, dtype: object
-64    Absent, missed, or irregular menstrual periods...
-Name: Less common, dtype: object
-64    Acid or sour stomach
-64    NaN
-Name: Incidence not known, dtype: object
-65    Accidental injury
-65    Actions that are out of control
-65    Dizzines
-66    Dizziness
-66    Indigestio
-66    NaN
-Name: Incidence not known, dtype: object
-67    Abnormal vision
-67    Constipatio
-67    NaN
-79    NaN
-92    NaN
-Name: Incidence not known, dtype: object
-68    Acid or sour stomach
-68    Blemishes on the skin
-68    NaN
-89    NaN
-Name: Incidence not known, dtype: object
-69    Chills or fever
-69    Cracks in the skin
-69    Decreased appetite
-94    Absent, missed, or irregular menstrual periods...
-Name: Less common, dtype: object
-94    Acid or sour stomach
-94    NaN
-Name: Incidence not known, dtype: object
+Abnormal vision
+Absent, missed, or irregular menstrual periods
+Accidental injury
+Acid or sour stomach
+Acne
+Actions that are out of control
+Blemishes on the skin
+Chills or fever
+Constipatio
+Cracks in the skin
+Decreased appetite
+Dizzines
+Dizziness
+Indigestio
 aching joints or muscles
 acid or sour stomach
-b...
-Name: Incidence not known, dtype: object
 back pai
-behavioral ch...
-Name: Less common, dtype: object
+back pain
+behavioral changes (especially in children)
 belchin
-belchin...
-79    Abnormal vision
-belchin...
-92    Abnormal vision
-belchin...
-Name: Less common, dtype: object
 belching
-bloated feeling or pressure in the stoma...
-Name: Less common, dtype: object
-body aches or ...
-Name: More common, dtype: object
-body aches or p...
-Name: More common, dtype: object
+bloated feeling or pressure in the stomach
 body aches or pain
-chang...
-89    Acid or sour stomach
-chang...
-Name: More common, dtype: object
-chi...
-89    Blemishes on the skin
-chi...
-Name: Less common, dtype: object
+burning, dry, or itching eyes
+change in or loss of taste
+change in personality
+change in taste or bad unusual or unpleasant (after) taste
+change in vision
+chills
+coin-shaped lesions on the skin
+cold sweats
+confusion, agitation, or hostility (especially in the elderly)
+congestion
+constipatio
+continuing ringing or buzzing or other unexplained noise in the ears
+cough
+cough producing mucus
+cramps
+dandruf
+dandruff
+decreased appetite
+decreased interest in sexual intercourse
+decreased strength and energy
+diarrhe
+diarrhea
+difficulty having a bowel movement (stool)
+discharge or excessive tearing
+discouragement
+droolin
 drowsiness
 drowsiness (mild)
+dry ski
+dry skin
+drying and thinning of hair
+dryness of the mouth
+dryness or soreness of the throat
+earache
+excess air or gas in the stomach or bowels
+excess air or gas in the stomach or intestines
+eye pai
+eye pain
+false or unusual sense of well-being
+fear
+feeling of constant movement of self or surroundings
+feeling of unreality
+feeling sad or empty
+fever
+full feeling
+hair los
+hair loss or thinning of the hair
 headach
+headache
+hearing los
+hearing loss
+heartbur
+heartburn
+heavy bleeding
+heavy menstrual bleedin
+hoarseness
+impaired vision
+inability to have or keep an erection
+increased appetite
+increased cough
+increased muscle tone
+increased sensitivity of the skin to sunlight (skin rash, itching, redness or other discoloration of the skin, or severe sunburn)
+increased sweating
+increased watering of the mouth
+increased weight
+indigestio
+irritability
+irritation or soreness of the tongue or mouth
+itching of the vagina or genital area
+itching skin
 joint or muscle pain
+joint pain
+lack of appetite
+lack of feeling or emotion
+lack or loss of strength
+leg cramps
 lightheadedness
-loss of heat from the body...
-70    Cracks in the skin
-loss of heat from the body...
-Name: Incidence not known, dtype: object
+loss in sexual ability, desire, drive, or performance
+loss of balanc
+loss of bowel control
+loss of hair
+loss of heat from the body
+loss of interest or pleasure
+loss of memory
 loss of strength
 menstrual pain
+muscle trembling, jerking, or stiffness
+nause
+nausea (mild)
+neck pai
+neck pain
+oily skin
+other problems with muscle control or coordination
+pain
+pain during sexual intercourse
+pain in the arms or legs
+pain or tenderness around the eyes and cheekbones
+pain or tenderness around the eyes and cheekbones 
+painful or prolonged erections of the penis
+passing gas
+pimple
+problems with memory
+rash
+rash with flat lesions or small raised lesions on the skin
+redness or swelling in the ear
+redness, pain, swelling of the eye, eyelid, or inner lining of the eyelid
+redness, swelling, or soreness of the tongue
+runny nos
+salivary gland swelling
+scaly skin
+seeing double
+seizure
+sensation of spinning
+sense of detachment from self or body
+sexual problems in males
+shakiness and unsteady walk
+shuffling walk
+sleepiness
+sneezing
+stiff neck
+stiffness of the arm or leg
+stomach discomfort, upset, or pain
+stomach pain, upset, or discomfort
+stopping of menstrual bleeding
+stuffy nose
+sudden, wide mood swings
+sweating
+swelling of the breasts or breast soreness in both females and males
+talking, feeling, and acting with excitement
+tender, swollen glands in the neck
+thick, white vaginal discharge with no odor or with a mild odor
+thirst
+thoughts or attempts of killing oneself
+tiredness
+tooth pai
+trembling or shaking
+trouble concentrating
+trouble sleeping
+trouble with concentrating
+trouble with sleeping
+trouble with swallowing
+twisting movements of the body
+uncaring feelings
+uncontrolled eye movements
+uncontrolled movements, especially of the face, neck, and back
+unusual drowsiness
+unusual milk production
+vaginal discharg
+voice change
+voice changes
+vomitin
+vomiting (mild)
+watering of the mouth
+weight gain
+weight los
+weight loss

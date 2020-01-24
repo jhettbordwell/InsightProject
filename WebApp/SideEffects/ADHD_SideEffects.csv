@@ -1,84 +1,97 @@
 
-Name: Less common, dtype: object
-
-Name: More common, dtype: object
-...
-76    Constipatio
-...
-Name: More common, dtype: object
-10    Abdominal or stomach cramps
-10    NaN
-Name: Less common, dtype: object
-10    NaN
-Name: More common, dtype: object
-11    Bigger, dilated, or enlarged pupils (black par...
-Name: Incidence not known, dtype: object
-11    NaN
-Name: Less common, dtype: object
-11    NaN
-Name: More common, dtype: object
-4    Belchin
-4    Decreased interest in sexual intercourse
-4    Dry mouth
-54    Acid or sour stomach
-54    NaN
-Name: Incidence not known, dtype: object
-54    Twitching
-55    Bad, unusual, or unpleasant (after) taste
-55    NaN
-Name: Less common, dtype: object
-55    NaN
-Name: More common, dtype: object
-56    Belchin
-56    Decreased interest in sexual intercourse
-56    Dry mouth
-57    Belchin
-57    Change in taste
-57    Constipatio
-58    Constipatio
-58    Darkening of the skin
-58    NaN
-Name: Incidence not known, dtype: object
-62    Blurred vision
-62    Constipatio
-62    NaN
-76    NaN
-Name: Incidence not known, dtype: object
-9    Bigger, dilated, or enlarged pupils (black par...
-Name: Incidence not known, dtype: object
-9    NaN
-Name: Less common, dtype: object
-9    NaN
-Name: More common, dtype: object
+Abdominal or stomach cramps
+Acid or sour stomach
+Bad, unusual, or unpleasant (after) taste
+Belchin
+Bigger, dilated, or enlarged pupils (black part of the eye)
+Blurred vision
+Change in taste
+Constipatio
+Darkening of the skin
+Decreased interest in sexual intercourse
+Dry mouth
+Twitching
 belchin
-bigger, dilated, ...
-Name: Incidence not known, dtype: object
-cha...
-Name: Incidence not known, dtype: object
+bigger, dilated, or enlarged pupils (black part of the eye)
+black tongue
+bloatin
 change in sense of taste
+change in taste
+constipatio
 decrease in appetite
+decrease in the frequency of urination
+decrease in urine volume
 decreased appetite
-decreased interest in sexual ...
-Name: Incidence not known, dtype: object
-decreased sexual ...
-Name: Less common, dtype: object
-decreased sexual abilit...
-Name: Less common, dtype: object
-diff...
-Name: Incidence not known, dtype: object
+decreased interest in sexual ability or desire
+decreased interest in sexual intercourse
+decreased interest or ability in sexual intercourse
+decreased sexual ability
+diarrhe
+difficulty having a bowel movement
+difficulty having a bowel movement (stool)
+difficulty in moving
+difficulty in passing urine (dribbling)
 dizziness
-drow...
-76    Blurred vision
-drow...
-Name: Less common, dtype: object
+drowsiness
+dry mouth
+dry, itching, or burning eyes
 dryness of the mouth
+enlargement of the breast
+frequent need to urinate
+general feeling of discomfort or illness
+hair los
 heartbur
-indig...
-Name: More common, dtype: object
+hives
+hives</a or <a data-ga-action="welts" data-ga-category="Content Link" href="/cg/angioedema.html"welts
+inability to have or keep an erection
+increase in sexual ability or desire
+increase in sexual ability, desire, drive, or performance
+increased in sexual ability, desire, drive, or performance
+increased interest in sexual intercourse
+increased sensitivity of the eyes or skin to light
+increased sensitivity of the eyes to light
+increased sweating
+increased urge to urinate during the night
 indigestio
+joint pain or swelling
+lack or loss of strength
+leg cramp or pain
+loss in sexual ability, desire, drive, or performance
 loss of appetite
+muscle ache, cramp, pain, or stiffness
+nause
+nausea
+pain or discomfort in the chest, upper stomach, or throat
+painful urination
+paleness of the skin
+passing of gas
+peculiar taste
+redness of the skin
+redness or other discoloration of the skin
+seeing or hearing things that are not there
+severe sunburn
+sleepiness or unusual drowsiness
+small red or purple spots on the skin
 sore throa
-stom...
-Name: Less common, dtype: object
-stoma...
-Name: More common, dtype: object
+stomach ache
+stomach discomfort, upset, or pain
+stomach pain
+swelling of the breasts or breast soreness in both females and males
+swelling of the testicles
+swelling or inflammation of the mouth
+swollen, painful, or tender lymph glands on side of face or neck
+swollen, painful, or tender lymph glands on the side of the face or neck
+throat pain
+trembling
+trouble with sleeping
+unexpected or excess milk flow from breasts in females
+unexpected or excess milk flow from the breasts
+unpleasant taste
+unusual dullness or feeling of sluggishness
+unusual feeling of well-being
+upper abdominal or stomach pain
+vision changes
+voice changes
+waking to urinate at night
+weight gain
+weight los

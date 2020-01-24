@@ -26,7 +26,8 @@
     <form action="" method="post" novalidate>
       {{ form.csrf_token }}
       <p>
-	{{ form.diagnosis.label }}<br>
+	{{ form.diagnosis.label }}<br><br>
+	{{ form.diagnosis()}}<br><br><br>
 	{{ form.submitDiagnosis() }}
       </p>
     </form>
