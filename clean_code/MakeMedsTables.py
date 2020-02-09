@@ -3,6 +3,7 @@ from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy import inspect
 import psycopg2
 import pandas as pd
+import glob
 
 # Dictionary for me to remember what the tables mean
 #   Sourced from ASC_NTS.doc file in the downloads
@@ -92,11 +93,11 @@ con = psycopg2.connect(database = 'faers',
 # Defining how to get info on each drug
 #   Just writing out some basic info
 conditions = ['ADHD', 'Anxiety', 'Bipolar-Disorder', 'Depression', 'Schizophrenia']
-path2uniqMeds = '~/Insight/PsychProject/UniqueMedications/'
+# path2uniqMeds = '~/Insight/PsychProject/UniqueMedications/'
 
-#   Defining some useful functions to work with the data
-getfile = lambda condition: pd.read_csv(path2uniqMeds+'Medications_unique_{:s}.csv'.format(condition), sep='$', index_col=0)
-pullMeds = lambda ind, df: df.loc[ind]['All names']
+# #   Defining some useful functions to work with the data
+# getfile = lambda condition: pd.read_csv(path2uniqMeds+'Medications_unique_{:s}.csv'.format(condition), sep='$', index_col=0)
+# pullMeds = lambda ind, df: df.loc[ind]['All names']
 
 
 # Wow this did magic:
@@ -104,7 +105,7 @@ pullMeds = lambda ind, df: df.loc[ind]['All names']
 
 #   Query functions
 def grabDrug(drugnames, connector):
-    formattednames = "('"+"', '".join(list(set([drug.strip() for drug in drugnames.upper().split(', ')])))+"')"
+    formattednames = "('"+"', '".join(list(set([drug.strip().replace('-', ' ') for drug in drugnames.upper().split(', ')])))+"')"
     query = """SELECT primaryid, role_cod, drugname, drug_seq, val_vbm, route, dose_amt, dose_unit, dose_freq FROM drug WHERE drugname IN {:s};""".format(formattednames)
 
     df = pd.read_sql_query(query, con).fillna(value='')
@@ -198,42 +199,44 @@ def joinSQLTables(demo, drug, reac, ther, indi, rpsr):
     return massiveDF
 
 
-# for condition in conditions:
-#     print(condition)
-#     uniqDF = getfile(condition)
-#     for ind in uniqDF.index:
-#         medications = pullMeds(ind, uniqDF)
-#         print(medications)
+for condition in conditions:
+    uniqMeds = glob.glob('ProcessedReviews/{:s}/clean*csv'.format(condition))
+    uniqMeds = [f[f.find('clean_')+6:f.rfind('_reviews')] for f in uniqMeds]
+    for med in uniqMeds:
+        print(med)
+        drugDF = grabDrug(med, con)
+        primaryIDs = drugDF['primaryid']
+        print('I pulled the drugs')
 
-#         drugDF = grabDrug(medications, con)
-#         primaryIDs = drugDF['primaryid']
-#         print('I pulled the drugs')
-        
-#         demoDF = grabDemog(primaryIDs, con)
-#         print('I pulled the demographics')
+        if any(primaryIDs):
+            demoDF = grabDemog(primaryIDs, con)
+            print('I pulled the demographics')
 
-#         reacDF = grabReac(primaryIDs, con)
-#         print('I pulled the reactions')
+            reacDF = grabReac(primaryIDs, con)
+            print('I pulled the reactions')
         
-#         therDF = grabTher(primaryIDs, con)
-#         print('I pulled the treatment duration')
+            therDF = grabTher(primaryIDs, con)
+            print('I pulled the treatment duration')
         
-#         indiDF = grabIndi(primaryIDs, con)
-#         print('I pulled the indicated condition')
+            indiDF = grabIndi(primaryIDs, con)
+            print('I pulled the indicated condition')
         
-#         rpsrDF = grabRpsr(primaryIDs, con)
-#         print('I pulled who reported it')
+            rpsrDF = grabRpsr(primaryIDs, con)
+            print('I pulled who reported it')
         
 
-#         finished_product = joinSQLTables(demoDF, drugDF, reacDF, therDF, indiDF, rpsrDF)
-#         print('I joined everything magically together')
+            finished_product = joinSQLTables(demoDF, drugDF, reacDF, therDF, indiDF, rpsrDF)
+            print('I joined everything magically together')
         
-#         savefile = lambda drug, cond: 'faers_results/{:s}/faers_pull_{:s}.csv'.format(cond, drug.strip())
+            savefile = lambda drug, cond: 'faers_results/{:s}/faers_pull_{:s}.csv'.format(cond, drug)
 
-#         fname = savefile(medications.split(', ')[0], condition)
-#         finished_product.to_csv(fname, sep='$')
-#         print('I saved the file')
+            fname = savefile(med, condition)
+            finished_product.to_csv(fname, sep='$')
+            print('I saved the file')
+        else:
+            print('I did not find the medication')
 
+        print('\n')
 
 for condition in ['ADHD', 'Anxiety', 'Bipolar-Disorder', 'Depression', 'Schizophrenia']:
         medications = 'LITHIUM'
@@ -264,6 +267,6 @@ for condition in ['ADHD', 'Anxiety', 'Bipolar-Disorder', 'Depression', 'Schizoph
         
         savefile = lambda drug, cond: 'faers_results/{:s}/faers_pull_{:s}.csv'.format(cond, drug.strip())
 
-        fname = savefile(medications.split(', ')[0], condition)
+        fname = savefile('lithium-carbonate', condition)
         finished_product.to_csv(fname, sep='$')
         print('I saved the file')

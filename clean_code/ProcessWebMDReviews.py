@@ -10,25 +10,27 @@ class ProcessReviews:
         self._conditionWords()
         
     def _defineCondsAndMeds(self, medFile='MedicationsAndSideEffects.csv'):
-        dataframe = pd.read_csv(medfile, sep='$', index_col=0)
+        dataframe = pd.read_csv(medFile, sep='$', index_col=0)
         self.medications = np.array(dataframe['Medication'])
         self.conditions = np.array(dataframe['Condition'])
         
     def _getReviewFiles(self, revDir='./Reviews/'):
         self.reviews = glob.glob(revDir+'*csv')
-        self.review_meds = [s[s.rfind('/')+1:s.find('.csv')] for s in self.reviews]
+        self.review_meds = [s[s.rfind('/')+1:s.find('_reviews.csv')] for s in self.reviews]
 
     def _groupReviewsByMedAndCondition(self):
         self.conditionBunches = {}
         for condition in np.unique(self.conditions):
             inds = np.where(self.conditions==condition)
             self.conditionBunches[condition] = {}
+            relReviews = []
+            relReviewMeds = []
             for med in self.medications[inds]:
                 clean_med = med.lower().replace(' ','-')
-                relReviews = [rev for rev in self.reviews if rev.find(clean_med) != -1]
-                relReviewMeds = [revm for revm in self.review_meds if revm.find(clean_med) != -1]
-                self.conditionBunches[condition]['Reviews'] =  relReviews
-                self.conditionBunches[condition]['Review Medications'] = relReviewMeds
+                relReviews += [rev for rev in self.reviews if rev.find(clean_med) != -1]
+                relReviewMeds += [revm for revm in self.review_meds if revm.find(clean_med) != -1]
+            self.conditionBunches[condition]['Reviews'] = relReviews
+            self.conditionBunches[condition]['Review Medications'] = relReviewMeds
                 
     def _conditionWords(self):
         # Words that are relevant for the conditions we're looking at
@@ -105,7 +107,7 @@ class ProcessReviews:
         keeprevs = []  ;  keeprevMeds = []
         for i,rev in enumerate(reviews):
             df1 = pd.read_csv(rev, sep='$', index_col=0)
-            date1 = df1['date']
+            date1 = np.array(df1['date'])
 
             # Allowing for alterations to list that is being compared against so that no repeats
             # are compared against, and things go a little faster
@@ -117,10 +119,10 @@ class ProcessReviews:
             removeRevs = []
             for rev2,revnem in zip(newrevs, newmeds):
                 df2 = pd.read_csv(rev2, sep='$', index_col=0)
-                date2 = df2['date']
+                date2 = np.array(df2['date'])
 
                 # Should always be dates so don't have to worry about NaNs
-                if sum(date1 == date2) == len(date1):
+                if np.array(date1 == date2, dtype=int).sum() == date1.size:
                     removeNames.append(revnem)
                     removeRevs.append(rev2)
 
@@ -148,21 +150,22 @@ class ProcessReviews:
             for ind, cond in enumerate(conditions):
                 if [cond for word in self.addCondWords[condition] if cond.find(word) != -1]:
                     inds.append(ind)
+            if inds:
+                df = df.loc[np.array(inds)]
+                conds = [df.loc[ind]['conditionInfo'][len('Condition: '):] for ind in df.index]
+                df['conditionInfo'] = conds
+                
+                # Dropping rows without a text review and dropping duplicates
+                df = df.drop(index=[ind for ind in df.index if type(df.loc[ind]['Full Review']) == float])
+                df = df.drop_duplicates()
+                df = df.reset_index()
 
-            df = df.loc[np.array(inds)]
-            conds = [df.loc[ind]['conditionInfo'][len('Condition: '):] for ind in df.index]
-            df['conditionInfo'] = conds
-            
-            # Dropping rows without a text review and dropping duplicates
-            df = df.drop(index=[ind for ind in df.index if type(df.loc[ind]['Full Review']) != float])
-            df = df.drop_duplicates()
-            df = df.reset_index()
-            
-            # Cleaning up the reviewer column
-            df = self.processReviewerColumn(df)
-
-            # Writing the review to a csv
-            df.to_csv('ProcessedReviews/{:s}/clean_'+rev[rev.rfind('/')+1:], sep='$')
+                if len(df) >= 25:  
+                    # Cleaning up the reviewer column
+                    df = self.processReviewerColumn(df)
+                
+                    # Writing the review to a csv
+                    df.to_csv('ProcessedReviews/{:s}/clean_'.format(condition)+rev[rev.rfind('/')+1:], sep='$')
 
     def processAllReviews(self):
         for condition in self.conditionBunches:

@@ -20,12 +20,15 @@ def uniqSEs_from_medfile(medfile, condfilter):
     df = df[[role.find('C') == -1 for role in df['role_cod']]]
 
     # Finding all the unique side effects mentioned
-    SEs = []
-    for pt in df['pt']:
-        SEs += pt.split(', ')
-    uniq_SEs = np.unique(SEs)
+    if any(df):
+        SEs = []
+        for pt in df['pt']:
+            SEs += pt.split(', ')
+        uniq_SEs = np.unique(SEs)
 
-    return uniq_SEs
+        return uniq_SEs
+    else:
+        return []
 
 
 def findUMLSCodes_forUniqSEs(uniq_SEs, condition, medication, path='./'):
@@ -64,21 +67,17 @@ def conglommerate_SEs_and_meds(condition):
     # Gathering files and medications
     files = glob.glob('faers_results/{:s}/SideEffects_Found_*.csv'.format(condition))
     medications = [f[f.find('Found_')+6:f.find('.csv')] for f in files]
-    uniqMeds = pd.read_csv('~/Insight/PsychProject/UniqueMedications/Medications_unique_{:s}.csv'.format(condition), sep='$')['All names']
-    meds_dealiased = {}
-    for med in medications:
-        for allnames in uniqMeds:
-            if allnames.lower().find(med.lower()) != -1:
-                meds_dealiased[med] = allnames.lower()
+    #uniqMeds = glob.glob('ProcessedReviews/{:s}/clean*csv')
+    #uniqMeds = [f[f.find('clean_')+6:f.rfind('_reviews')] for f in uniqMeds]
 
     # Creating one monster dataframe that will become a pivot table
     for i,f in enumerate(files):
         if i == 0:
             masterdf = pd.read_csv(f,sep='$')
-            masterdf['Medication'] = [meds_dealiased[medications[i]]]*len(masterdf)
+            masterdf['Medication'] = [medications[i]]*len(masterdf)
         else:
             df = pd.read_csv(f,sep='$')
-            df['Medication'] = [meds_dealiased[medications[i]]]*len(df)
+            df['Medication'] = [medications[i]]*len(df)
             masterdf = masterdf.append(df, ignore_index=True,sort=False)
 
     masterPV = masterdf.pivot_table(index='Concept ID', values=['Side Effect', 'Medication'],
@@ -237,11 +236,16 @@ for cond, condfilter in zip(condition, condition_filter):
     files = glob.glob('faers_results/{:s}/faers_pull_*csv'.format(cond))
     for f in files:
         medication = f[f.find('pull_')+5:f.find('.csv')]
-        uSEs = uniqSEs_from_medfile(f, condfilter)
-        findUMLSCodes_forUniqSEs(uSEs, cond, medication)
+        print(medication)
 
-    conglommerate_SEs_and_meds(cond)
-    workWConglommerate(cond)
+        if not glob.glob('faers_results/{:s}/SideEffects_Found_{:s}.csv'.format(cond,medication)):
+            uSEs = uniqSEs_from_medfile(f, condfilter)
+            if any(uSEs):
+                findUMLSCodes_forUniqSEs(uSEs, cond, medication)
+
+    if not glob.glob('faers_results/{:s}/SideEffectsExtracted.csv'.format(cond)):
+        conglommerate_SEs_and_meds(cond)
+        workWConglommerate(cond)
 
 
 # med = 'bupropion'
